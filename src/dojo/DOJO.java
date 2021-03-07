@@ -5,14 +5,12 @@
  */
 package dojo;
 
-        import java.util.Scanner;
-        import java.io.FileInputStream;
-        import java.io.EOFException;
         import java.io.IOException;
         import java.nio.charset.StandardCharsets;
         import java.nio.file.Files;
         import java.nio.file.Paths;
         import java.util.StringTokenizer;
+        import java.util.Arrays;
         
 
 public class DOJO {
@@ -22,15 +20,11 @@ public class DOJO {
         
         content = content.replaceAll("([ \t]*\\/\\/.*)", "");
         content = content.replaceAll("\\/\\*([\\S\\s]+?)\\*\\/", "");
-        StringTokenizer st = new StringTokenizer(content,"\\r?\\n|\\r");
-        while (st.hasMoreElements()) {
-            crunchifyPrint("StringTokenizer Output: " + st.nextElement());
-         }
-        System.out.println(st);
+     
+        String lines[] = content.split("\\r?\\n");
+
+        System.out.println(Arrays.toString(lines));
         
-    }
-    private static void crunchifyPrint(String print) {
-        System.out.println(print);
     }
     
     
